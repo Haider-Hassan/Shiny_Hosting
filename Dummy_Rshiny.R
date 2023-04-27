@@ -10,7 +10,8 @@ installReqs <- function(package_name, bioc) {
 
 
 #Install pacakges:
-installReqs("shiny", bioc = FALSE)
+installReqs("BiocManager", bioc = FALSE)
+installReqs("shiny", bioc = TRUE)
 installReqs("shinydashboard", bioc = TRUE)
 installReqs("shinyjqui", bioc = TRUE)
 installReqs("DT", bioc = TRUE)
