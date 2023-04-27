@@ -1,3 +1,31 @@
+#Install packages if not installed
+installReqs <- function(package_name, bioc) {
+  if (requireNamespace(package_name, quietly = TRUE) == FALSE) {
+    if (bioc == FALSE)
+      install.packages(package_name)
+    else if (bioc == TRUE) #install using Bioconductor package manager
+      BiocManager::install(package_name)
+  }
+}
+
+
+#Install pacakges:
+installReqs("shiny", bioc = FALSE)
+installReqs("shinydashboard", bioc = TRUE)
+installReqs("shinyjqui", bioc = TRUE)
+installReqs("DT", bioc = TRUE)
+installReqs("RColorBrewer", bioc = TRUE)
+installReqs("pheatmap", bioc = TRUE)
+installReqs("ggplot2", bioc = TRUE)
+installReqs("shinycssloaders", bioc = TRUE)
+installReqs("shinyWidgets", bioc = TRUE)
+installReqs("shinyjs", bioc = TRUE)
+installReqs("colourpicker", bioc = TRUE)
+installReqs("bayestestR", bioc = TRUE)
+
+
+
+
 app_version = getRversion()
 
 #Loading packages:
